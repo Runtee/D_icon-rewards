@@ -1,3 +1,4 @@
+require('dotenv').config()
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 const express = require('express');
@@ -14,15 +15,15 @@ const userRoutes = require('./routes/user');
 const indexRoutes = require('./routes/index');
 const authMiddleware = require('./middleware/authMiddleware');
 
-mongoose.connect('mongodb://localhost:27017/rewardsdb',
-    { useNewUrlParser: true, useUnifiedTopology: true }, (err, db) => {
-        if (db) {
-            console.log('database connected successfully')
-        }
-        if (err) {
-            console.log(err);
-        }
-    });
+mongoose.connect(process.env.MONGO_URI+'rewardsdb',
+ { useNewUrlParser: true, useUnifiedTopology: true },(err,db)=>{
+  if (db){
+    console.log('database connected successfully')
+  }
+  if (err){
+      console.log(err);
+  }
+});
 app.use(expressSession({
     secret: 'danceingcat',
     saveUninitialized: true,
@@ -42,7 +43,6 @@ next()
 })
 
 
-
-app.listen(3000, () => {
-    console.log('listening on port 3000');
-});
+app.listen(process.env.PORT || 3000, () => {
+    console.log('App listening on port 3000')
+})
