@@ -13,12 +13,13 @@ const discountSchema=new Schema({
         required:[true, 'shop location is required']
     },
     shoppingAmount:{
-        type:String,
-        required:[true, 'shopping amount is required']
+        type:Number,
     },
-    discount:{
-        type:String,
-        required:[true, 'discount is required']
+    product:{
+        type:[],
+    },
+    discounts:{
+        type:Number,
     },
     date:{
         type:Date,

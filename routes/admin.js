@@ -15,6 +15,10 @@ router.post('/grant-reward', authMiddlewareA, rewardController.grantReward)
 router.post('/delete-reward', authMiddlewareA, rewardController.deleteReward)
 router.get('/view-reward', authMiddlewareA, rewardController.viewAllRewards)
 router.get('/dashboard', authMiddlewareA, adminController.dashboard)
+router.get('/add-product', authMiddlewareA, adminController.addProduct)
+router.post('/add-product/:id', authMiddlewareA, rewardController.addProduct)
+router.get('/view-product/:id', authMiddlewareA, rewardController.viewAllProduct)
+
 router.get('/logout', authMiddlewareA, (req, res) => {
     req.session.destroy(() => {
         res.redirect('/admin')

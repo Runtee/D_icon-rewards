@@ -1,5 +1,5 @@
 .home-body{
-    background-image: url('../img/loyalty.jpg');
+    background-image: linear-gradient(rgba(75, 75, 75, 0.473), rgba(255, 255, 255, 0.438)),url('../img/loyalty.jpg');
 }
 .btn:link,
 .btn:visited {
@@ -31,6 +31,9 @@
 .mainColor{
     color: #6f1496;
 
+}
+.hi{
+    font-size:70px;
 }
 .carousel-inner img{
     height: 37.9rem;

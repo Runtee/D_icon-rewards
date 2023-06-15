@@ -4,26 +4,30 @@
 
 
   <main>
-    <div class="row px-5 m-0 my-2">
+    <div class="row px-5 m-5 my-2">
       <div class="col-6 ">
+        <a href="/dashboard/profile" class="nav-link">
         <div class=" rounded-2 main-color p-2 pb-1">
           <ul class="list-unstyled">
             <li><strong><%= user.fullname %> </strong></li>
             <li><%= user.email %> </li>
           </ul>
         </div>
+      </a>
       </div>
       <div class="col-6">
+        <a href="/dashboard/rewards" class="nav-link">
         <div class="bg-secondary rounded-2 p-2 pb-1 text-white ">
           <ul class="list-unstyled">
             <li><strong>Your reward balance</strong></li>
             <li>&#8358; <%= totalAmount %>  </li>
           </ul>
         </div>
+        </a>
       </div>
     </div>
-
-    <div id="myCarousel" class="carousel slide m-0 h-auto p-5 m-1" data-bs-ride="carousel">
+<div class="px-5 mx-5">
+    <div id="myCarousel" class="carousel slide m-0 h-auto p-5 mx-5" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
@@ -53,6 +57,7 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+  </div>
   </main>
   <%- include('includes/footer'); -%>
 

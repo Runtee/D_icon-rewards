@@ -150,7 +150,7 @@ exports.getAllUsers = async (req, res, next) => {
 exports.deleteUser = async (req, res) => {
     try {
         const id = req.body.id
-        await User.findOneAndDelete({ id: id })
+        await User.findOneAndDelete({ _id: id })
         req.flash("success", "successfully removed user")
         return res.redirect("/admin/get-users")
     }
@@ -161,3 +161,13 @@ exports.deleteUser = async (req, res) => {
     }
 };
 
+
+exports.addProduct = async (req,  res)=>{
+    res.render('admin/add-product', {
+        errors: req.flash('error'),
+        success: req.flash('success'),
+        pageTitle: "view users",
+        active: "user"
+
+    })   
+}
